@@ -111,8 +111,7 @@ if(isset($_REQUEST['action']))
                             <td><?php echo $r->__GET('descripcion'); ?></td>
                             <td><?php echo $r->__GET('precio'); ?></td>
                             <td><?php echo $r->__GET('stock'); ?></td>
-                            <td><?php echo $r->__GET('imagen'); ?></td>
-                            <td>
+                            <td><img src="data:image/jpg;base64,<?php echo base64_encode(__GET('imagen'))?>"></td>
                                 <a href="?action=editar&id=<?php echo $r->id; ?>">Editar</a>
                             </td>
                             <td>
