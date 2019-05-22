@@ -21,7 +21,7 @@ if(isset($_REQUEST['action']))
 			$tipo = $_FILES['imagen']['type'];
 			$tamaño_imagen = $_FILES['imagen']['size'];
 
-			$carpeta_destino = $_SERVER['DOCUMENT_ROOT'] . '/html/imagenes_bd/';
+			$carpeta_destino = '/var/www/html/imagenes_bd/';
 
 			move_uploaded_file($_FILES['imagen']['temp_name'], $carpeta_destino.$nombre_imagen);
 
@@ -41,7 +41,7 @@ if(isset($_REQUEST['action']))
 			$tipo = $_FILES['imagen']['type'];
 			$tamaño_imagen = $_FILES['imagen']['size'];
 
-			$carpeta_destino = $_SERVER['DOCUMENT_ROOT'] . '/html/imagenes_bd/';
+			$carpeta_destino = '/var/www/html/imagenes_bd/';
 
 			move_uploaded_file($_FILES['imagen']['temp_name'], $carpeta_destino.$nombre_imagen);
 
@@ -100,23 +100,19 @@ if(isset($_REQUEST['action']))
                             <td>
                                 <input type="file" name="imagen" value="<?php echo $alm->__GET('imagen'); ?>" size="20" />
                             </td>
-
-                            <?php 
-                            $nombre_imagen = $_FILES['imagen']['name'];
-							$tipo = $_FILES['imagen']['type'];
-							$tamaño_imagen = $_FILES['imagen']['size'];
-
-							$carpeta_destino = $_SERVER['DOCUMENT_ROOT'] . '/html/imagenes_bd/';
-
-							move_uploaded_file($_FILES['imagen']['temp_name'], $carpeta_destino.$nombre_imagen);
-
-                            ?>
                         </tr>
-                        
                     
                         <tr>
                             <td colspan="2">
                                 <button type="submit" class="pure-button pure-button-primary">Guardar</button>
+
+                                                        <?php $nombre_imagen = $_FILES['imagen']['name'];
+			$tipo = $_FILES['imagen']['type'];
+			$tamaño_imagen = $_FILES['imagen']['size'];
+
+			$carpeta_destino = '/var/www/html/imagenes_bd/';
+
+			move_uploaded_file($_FILES['imagen']['temp_name'], $carpeta_destino.$nombre_imagen); ?>
                             </td>
                         </tr>
                     </table>
