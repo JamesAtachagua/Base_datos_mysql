@@ -129,12 +129,6 @@ public function Actualizar(Producto $data)
 				$data->__GET('descripcion'), 
 				$data->__GET('precio'),
 				$data->__GET('stock'), 
-
-				$dir_subida = '/var/www/html/Base_datos_mysq/';
-				$fichero_subido = $dir_subida . basename($_FILES['imagen']['tmp_name']);
-
-				move_uploaded_file($_FILES['imagen']['tmp_name'], $fichero_subido);
-
 				$data->__GET('imagen'),
 				)
 			);
