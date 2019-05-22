@@ -10,11 +10,9 @@
 
 	$carpeta_destino = '/var/www/html/imagenes_bd/';
 
-	if(move_uploaded_file($temp, $carpeta_destino.$nombre_imagen)){
+move_uploaded_file($temp, $carpeta_destino.$nombre_imagen);
 
 		echo "hecho";
-	} else{
-		echo "error"
-	}
+	
 
 ?>
