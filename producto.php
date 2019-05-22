@@ -44,7 +44,7 @@ if(isset($_REQUEST['action']))
 			$carpeta_destino = $_SERVER['DOCUMENT_ROOT'] . '/html/imagenes_bd';
 
 			move_uploaded_file($_FILES['imagen']['temp_name'], $carpeta_destino.$nombre_imagen);
-			
+
 			$alm->__SET('imagen',        $_REQUEST['imagen']);
 
 			$model->Registrar($alm);
@@ -100,6 +100,17 @@ if(isset($_REQUEST['action']))
                             <td>
                                 <input type="file" name="imagen" value="<?php echo $alm->__GET('imagen'); ?>" size="20" />
                             </td>
+
+                            <?php 
+                            $nombre_imagen = $_FILES['imagen']['name'];
+							$tipo = $_FILES['imagen']['type'];
+							$tamaño_imagen = $_FILES['imagen']['size'];
+
+							$carpeta_destino = $_SERVER['DOCUMENT_ROOT'] . '/html/imagenes_bd';
+
+							move_uploaded_file($_FILES['imagen']['temp_name'], $carpeta_destino.$nombre_imagen);
+
+                            ?>
                         </tr>
                         
                     
