@@ -8,7 +8,7 @@
 	echo _FILES['imagen']['name'];
 
 
-	$carpeta_destino = '/var/www/html/img/';
+	$carpeta_destino = '/var/www/img/';
 
 	move_uploaded_file($temp, $carpeta_destino.$nombre_imagen);
 
