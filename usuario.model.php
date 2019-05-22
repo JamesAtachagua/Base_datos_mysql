@@ -29,10 +29,10 @@ class UsuarioModel
 			{
 				$vo = new Usuario();
 
-				$vo->__SET('idusuario', $r->idusuario);
-				$vo->__SET('login', $r->login);
-				$vo->__SET('clave', $r->clave);
-				$vo->__SET('estado', $r->estado);
+				$vo->__SET('id', $r->idusuario);
+				$vo->__SET('Login', $r->login);
+				$vo->__SET('Clave', $r->clave);
+				$vo->__SET('Estado', $r->estado);
 
 				$result[] = $vo;
 			}

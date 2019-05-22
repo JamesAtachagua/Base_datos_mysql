@@ -21,6 +21,10 @@
 <div>
 <a href="curso.php">Curso</a>
 </div>
+
+<div>
+<a href="producto.php">Producto</a>
+</div>
          
 
     </body>

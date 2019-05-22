@@ -55,24 +55,24 @@ if(isset($_REQUEST['action']))
         <div class="pure-g">
             <div class="pure-u-1-12">
                 
-                <form action="?action=<?php echo $vo->idusuario > 0 ? 'actualizar' : 'registrar'; ?>" method="post" class="pure-form pure-form-stacked" style="margin-bottom:30px;">
-                    <input type="hidden" name="idusuario" value="<?php echo $vo->__GET('idusuario'); ?>" />
+                <form action="?action=<?php echo $vo->id > 0 ? 'actualizar' : 'registrar'; ?>" method="post" class="pure-form pure-form-stacked" style="margin-bottom:30px;">
+                    <input type="hidden" name="id" value="<?php echo $vo->__GET('id'); ?>" />
                     
                     <table style="width:500px;">
                         <tr>
                             <th style="text-align:left;">Login</th>
-                            <td><input type="text" name="login" value="<?php echo $vo->__GET('login'); ?>" style="width:100%;" /></td>
+                            <td><input type="text" name="Login" value="<?php echo $vo->__GET('Login'); ?>" style="width:100%;" /></td>
                         </tr>
                         <tr>
                             <th style="text-align:left;">Clave</th>
-                            <td><input type="text" name="clave" value="<?php echo $vo->__GET('clave'); ?>" style="width:100%;" /></td>
+                            <td><input type="text" name="Clave" value="<?php echo $vo->__GET('Clave'); ?>" style="width:100%;" /></td>
                         </tr>
                         <tr>
                             <th style="text-align:left;">Estado</th>
                             <td>
                                 <select name="estado" style="width:100%;">
-                                    <option value="1" <?php echo $vo->__GET('estado') == 1 ? 'selected' : ''; ?>>Activo</option>
-                                    <option value="2" <?php echo $vo->__GET('estado') == 2 ? 'selected' : ''; ?>>Inactivo</option>
+                                    <option value="1" <?php echo $vo->__GET('Estado') == 1 ? 'selected' : ''; ?>>Activo</option>
+                                    <option value="2" <?php echo $vo->__GET('Estado') == 2 ? 'selected' : ''; ?>>Inactivo</option>
                                 </select>
                             </td>
                         </tr>
@@ -98,15 +98,15 @@ if(isset($_REQUEST['action']))
                     </thead>
                     <?php foreach($model->Listar() as $r): ?>
                         <tr>
-                            <td><?php echo $r->__GET('login'); ?></td>
-                            <td><?php echo $r->__GET('clave'); ?></td>
-                            <td><?php echo $r->__GET('estado') == 1 ? 'H' : 'F'; ?></td>
+                            <td><?php echo $r->__GET('Login'); ?></td>
+                            <td><?php echo $r->__GET('Clave'); ?></td>
+                            <td><?php echo $r->__GET('Estado') == 1 ? 'H' : 'F'; ?></td>
                             
                             <td>
-                                <a href="?action=editar&idusuario=<?php echo $r->idusuario; ?>">Editar</a>
+                                <a href="?action=editar&id=<?php echo $r->id; ?>">Editar</a>
                             </td>
                             <td>
-                                <a href="?action=eliminar&idusuario=<?php echo $r->idusuario; ?>">Eliminar</a>
+                                <a href="?action=eliminar&id=<?php echo $r->id; ?>">Eliminar</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
