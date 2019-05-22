@@ -7,7 +7,7 @@ class CursoModel
 	{
 		try
 		{
-			$this->pdo = new PDO('mysql:host=localhost:3307;dbname=acad', 'root', '');
+			$this->pdo = new PDO('mysql:host=localhost:3306;dbname=acad', 'utec', 'utec');
 			$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);		        
 		}
 		catch(Exception $e)

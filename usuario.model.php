@@ -7,7 +7,7 @@ class UsuarioModel
 	{
 		try
 		{
-			$this->pdo = new PDO('mysql:host=localhost:3307;dbname=acad', 'root', '');
+			$this->pdo = new PDO('mysql:host=localhost:3306;dbname=acad', 'utec', 'utec');
 			$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);		        
 		}
 		catch(Exception $e)
@@ -22,7 +22,7 @@ class UsuarioModel
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM usuario");
+			$stm = $this->pdo->prepare("SELECT * FROM usuarios");
 			$stm->execute();
 
 			foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
