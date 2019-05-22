@@ -81,7 +81,7 @@ if(isset($_REQUEST['action']))
                         <form action="subir.php" class="form-image-upload" method="POST" enctype="multipart/form-data"> 
 	                        <tr>
 						     	<td style="text-align:left;">Imagen</td>
-						        <td><input type="file" name="image" accept="image/*" >" style="width:100%;" /></td>
+						        <td><input type="file" name="image" accept="image/*" style="width:100%;" >/></td>
 						    </tr>
                     	</form>
 
