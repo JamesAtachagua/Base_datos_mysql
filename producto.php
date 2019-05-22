@@ -17,14 +17,6 @@ if(isset($_REQUEST['action']))
 			$alm->__SET('precio',        $_REQUEST['precio']);
 			$alm->__SET('stock',          $_REQUEST['stock']);
 
-			$nombre_imagen = $_FILES['imagen']['name'];
-			$tipo = $_FILES['imagen']['type'];
-			$tamaño_imagen = $_FILES['imagen']['size'];
-
-			$carpeta_destino = '/var/www/html/imagenes_bd/';
-
-			move_uploaded_file($_FILES['imagen']['temp_name'], $carpeta_destino.$nombre_imagen);
-
 			$alm->__SET('imagen',        $_REQUEST['imagen']);
 
 			$model->Actualizar($alm);
@@ -36,15 +28,6 @@ if(isset($_REQUEST['action']))
 			$alm->__SET('descripcion',     $_REQUEST['descripcion']);
 			$alm->__SET('precio',        $_REQUEST['precio']);
 			$alm->__SET('stock',          $_REQUEST['stock']);
-
-			$nombre_imagen = $_FILES['imagen']['name'];
-			$tipo = $_FILES['imagen']['type'];
-			$tamaño_imagen = $_FILES['imagen']['size'];
-
-			$carpeta_destino = '/var/www/html/imagenes_bd/';
-
-			move_uploaded_file($_FILES['imagen']['temp_name'], $carpeta_destino.$nombre_imagen);
-
 			$alm->__SET('imagen',        $_REQUEST['imagen']);
 
 			$model->Registrar($alm);
@@ -98,18 +81,8 @@ if(isset($_REQUEST['action']))
                         <tr>
                             <th style="text-align:left;">Imagen</th>
                             <td>
-                                <input type="file" name="imagen" value="<?php 
-            $nombre_imagen = $_FILES['imagen']['name'];
-			$tipo = $_FILES['imagen']['type'];
-			$tamaño_imagen = $_FILES['imagen']['size'];
-
-			$carpeta_destino = '/var/www/html/imagenes_bd/';
-
-			move_uploaded_file($_FILES['imagen']['temp_name'], $carpeta_destino.$nombre_imagen); 
-
-			echo $alm-> $nombre_imagen;
-
-                                 ?>" size="20" />
+                                <input type="file" name="imagen" value="<?php echo 
+                                $alm->addslashes(file_get_contents($_FILES['imagen']['tmp_name'])); ?>" />
                             </td>
                         </tr>
                     
