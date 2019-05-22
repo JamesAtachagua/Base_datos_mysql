@@ -116,6 +116,10 @@ if(isset($_REQUEST['action']))
                             <td>
                                 <a href="?action=eliminar&id=<?php echo $r->id; ?>">Eliminar</a>
                             </td>
+                            <td>
+                            	<label for="imagen">Imagen</label>
+                                <input type="file" name="imagen" size="20"> 
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </table>     
