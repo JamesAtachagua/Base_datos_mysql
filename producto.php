@@ -78,11 +78,13 @@ if(isset($_REQUEST['action']))
                             <th style="text-align:left;">Stock</th>
                             <td><input type="text" name="stock" value="<?php echo $alm->__GET('stock'); ?>" style="width:100%;" /></td>
                         </tr>
-                        <tr>
-					     	<td style="text-align:left;">Imagen</td>
-					        <td><input type="file" name="image" accept="image/*" value="<?php echo $alm->__GET('imagen'); ?>" style="width:100%;" /></td>
-					    </tr>
-                    
+                        <form action="subir.php" class="form-image-upload" method="POST" enctype="multipart/form-data"> 
+	                        <tr>
+						     	<td style="text-align:left;">Imagen</td>
+						        <td><input type="file" name="image" accept="image/*" >" style="width:100%;" /></td>
+						    </tr>
+                    	</form>
+
                         <tr>
                             <td colspan="2">
                                 <button type="submit" class="pure-button pure-button-primary">Guardar</button>
