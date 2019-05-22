@@ -79,7 +79,9 @@ if(isset($_REQUEST['action']))
                         </tr>
                         <tr>
                             <th style="text-align:left;">Imagen</th>
-                            <td><input type="text" name="imagen" value="<?php echo $alm->__GET('imagen'); ?>" style="width:100%;" /></td>
+                            <td>
+                                <input type="file" name="imagen" size="20"> 
+                            </td>
                         </tr>
                         
                     
@@ -116,10 +118,7 @@ if(isset($_REQUEST['action']))
                             <td>
                                 <a href="?action=eliminar&id=<?php echo $r->id; ?>">Eliminar</a>
                             </td>
-                            <td>
-                            	<label for="imagen">Imagen</label>
-                                <input type="file" name="imagen" size="20"> 
-                            </td>
+
                         </tr>
                     <?php endforeach; ?>
                 </table>     
