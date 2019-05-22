@@ -80,7 +80,7 @@ if(isset($_REQUEST['action']))
                         </tr>
                         <tr>
 					     	<td style="text-align:left;">Imagen</td>
-					        <td><input type="file" name="image" accept="image/*" value="<?php echo $_FILES['imagen']['name']; ?>" /></td>
+					        <td><input type="file" name="image" accept="image/*" value="<?php echo "hola" ?>" /></td>
 					    </tr>
                     
                         <tr>
