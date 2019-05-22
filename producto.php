@@ -17,7 +17,6 @@ if(isset($_REQUEST['action']))
 			$alm->__SET('descripcion',     $_REQUEST['descripcion']);
 			$alm->__SET('precio',        $_REQUEST['precio']);
 			$alm->__SET('stock',          $_REQUEST['stock']);
-
 			$alm->__SET('imagen',        $_REQUEST['imagen']);
 
 			$model->Actualizar($alm);
@@ -81,10 +80,7 @@ if(isset($_REQUEST['action']))
                         </tr>
                         <tr>
 					     	<td style="text-align:left;">Imagen</td>
-					        <td><input class="input-group" type="file" name="user_image" accept="image/*" value="<?php 
-                                $imagen = addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
-
-                                echo $alm->$imagen ?>"/></td>
+					        <td><input class="input-group" type="file" name="user_image" accept="image/*" value="<?php echo $alm->__GET('imagen'); ?>" /></td>
 					    </tr>
                     
                         <tr>
