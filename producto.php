@@ -5,6 +5,7 @@ require_once 'producto.model.php';
 // Logica
 $alm = new Producto();
 $model = new ProductoModel();
+$imagen;
 
 if(isset($_REQUEST['action']))
 {
@@ -81,8 +82,10 @@ if(isset($_REQUEST['action']))
                         <tr>
                             <th style="text-align:left;">Imagen</th>
                             <td>
-                                <input type="file" name="imagen" value="<?php echo 
-                                $alm->addslashes(file_get_contents($_FILES['imagen']['tmp_name'])); ?>" />
+                                <input type="file" name="imagen" value="<?php 
+                                $imagen = addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
+
+                                echo $alm->$imagen ?>" />
                             </td>
                         </tr>
                     
