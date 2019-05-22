@@ -80,14 +80,9 @@ if(isset($_REQUEST['action']))
                             <td><input type="text" name="stock" value="<?php echo $alm->__GET('stock'); ?>" style="width:100%;" /></td>
                         </tr>
                         <tr>
-                            <th style="text-align:left;">Imagen</th>
-                            <td>
-                                <input type="file" name="imagen" value="<?php 
-                                $imagen = addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
-
-                                echo $alm->$imagen ?>" />
-                            </td>
-                        </tr>
+					     	<td><label class="control-label">Profile Img.</label></td>
+					        <td><input class="input-group" type="file" name="user_image" accept="image/*" /></td>
+					    </tr>
                     
                         <tr>
                             <td colspan="2">
