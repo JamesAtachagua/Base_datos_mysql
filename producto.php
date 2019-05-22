@@ -77,7 +77,13 @@ if(isset($_REQUEST['action']))
                             <th style="text-align:left;">Stock</th>
                             <td><input type="text" name="stock" value="<?php echo $alm->__GET('stock'); ?>" style="width:100%;" /></td>
                         </tr>
-                      
+                        <tr>
+                            <th style="text-align:left;">Imagen</th>
+                            <td>
+                                <input type="file" name="imagen" size="20"> 
+                            </td>
+                        </tr>
+                        
                     
                         <tr>
                             <td colspan="2">
@@ -85,16 +91,6 @@ if(isset($_REQUEST['action']))
                             </td>
                         </tr>
                     </table>
-                </form>
-
-                <form action="cargaimgen.php" method="post" enctype="multipart/form-data">
-
-                	<tr>
-                            <th style="text-align:left;">Imagen</th>
-                            <td>
-                                <input type="file" name="imagen" size="20"> 
-                            </td>
-                        </tr>
                 </form>
 
                 <table class="pure-table pure-table-horizontal">
@@ -117,7 +113,7 @@ if(isset($_REQUEST['action']))
                             <td><?php echo $r->__GET('stock'); ?></td>
                             <td><?php echo $r->__GET('imagen'); ?></td>
                             <td>
-                                <a href="?action=editar&id=<?php echo $r->id; ?>">Editar</a>
+                                <a href="?action=edita&id=<?php echo $r->id; ?>">Editar</a>
                             </td>
                             <td>
                                 <a href="?action=eliminar&id=<?php echo $r->id; ?>">Eliminar</a>
