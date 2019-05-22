@@ -13,7 +13,7 @@
 		    </tr>
 
 		    <tr>
-		     	<td colspan="2" ><input type="submit" value="Enviar Imagen" name="">></td>
+		     	<td colspan="2" ><input type="submit" value="Enviar Imagen" name=""></td>
 		    </tr>
     	</form>
     
