@@ -57,21 +57,29 @@ if(isset($_REQUEST['action']))
         <div class="pure-g">
             <div class="pure-u-1-12">
                 
-                <form action="?action=<?php echo $alm->codigo > 0 ? 'actualizar' : 'registrar'; ?>" method="post" class="pure-form pure-form-stacked" style="margin-bottom:30px;">
-                    <input type="hidden" name="codigo" value="<?php echo $alm->__GET('codigo'); ?>" />
+                <form action="?action=<?php echo $alm->id > 0 ? 'actualizar' : 'registrar'; ?>" method="post" class="pure-form pure-form-stacked" style="margin-bottom:30px;">
+                    <input type="hidden" name="id" value="<?php echo $alm->__GET('id'); ?>" />
                     
                     <table style="width:500px;">
                     	<tr>
-                            <th style="text-align:left;">Codigo</th>
-                            <td><input type="text" name="codigo" value="<?php echo $alm->__GET('codigo'); ?>" style="width:100%;" /></td>
+                            <th style="text-align:left;">ID</th>
+                            <td><input type="text" name="id" value="<?php echo $alm->__GET('id'); ?>" style="width:100%;" /></td>
                         </tr>
                         <tr>
-                            <th style="text-align:left;">Nombre</th>
-                            <td><input type="text" name="nombre" value="<?php echo $alm->__GET('nombre'); ?>" style="width:100%;" /></td>
+                            <th style="text-align:left;">Descripcion</th>
+                            <td><input type="text" name="descripcion" value="<?php echo $alm->__GET('descripcion'); ?>" style="width:100%;" /></td>
                         </tr>
                         <tr>
-                            <th style="text-align:left;">Creditos</th>
-                            <td><input type="text" name="creditos" value="<?php echo $alm->__GET('creditos'); ?>" style="width:100%;" /></td>
+                            <th style="text-align:left;">Precio</th>
+                            <td><input type="text" name="precio" value="<?php echo $alm->__GET('precio'); ?>" style="width:100%;" /></td>
+                        </tr>
+                        <tr>
+                            <th style="text-align:left;">Stock</th>
+                            <td><input type="text" name="stock" value="<?php echo $alm->__GET('stock'); ?>" style="width:100%;" /></td>
+                        </tr>
+                        <tr>
+                            <th style="text-align:left;">Imagen</th>
+                            <td><input type="text" name="imagen" value="<?php echo $alm->__GET('imagen'); ?>" style="width:100%;" /></td>
                         </tr>
                         
                     
@@ -86,23 +94,27 @@ if(isset($_REQUEST['action']))
                 <table class="pure-table pure-table-horizontal">
                     <thead>
                         <tr>
-                            <th style="text-align:left;">Codigo</th>
-                            <th style="text-align:left;">Nombre</th>
-                            <th style="text-align:left;">Creditos</th>
+                            <th style="text-align:left;">ID</th>
+                            <th style="text-align:left;">Descripcion</th>
+                            <th style="text-align:left;">Precio</th>
+                            <th style="text-align:left;">Stock</th>
+                            <th style="text-align:left;">Imagen</th>
                             <th></th>
                             <th></th>
                         </tr>
                     </thead>
                     <?php foreach($model->Listar() as $r): ?>
                         <tr>
-                            <td><?php echo $r->__GET('codigo'); ?></td>
-                            <td><?php echo $r->__GET('nombre'); ?></td>
-                            <td><?php echo $r->__GET('creditos'); ?></td>
+                            <td><?php echo $r->__GET('id'); ?></td>
+                            <td><?php echo $r->__GET('descripcion'); ?></td>
+                            <td><?php echo $r->__GET('precio'); ?></td>
+                            <td><?php echo $r->__GET('stock'); ?></td>
+                            <td><?php echo $r->__GET('imagen'); ?></td>
                             <td>
-                                <a href="?action=editar&codigo=<?php echo $r->codigo; ?>">Editar</a>
+                                <a href="?action=editar&id=<?php echo $r->id; ?>">Editar</a>
                             </td>
                             <td>
-                                <a href="?action=eliminar&codigo=<?php echo $r->codigo; ?>">Eliminar</a>
+                                <a href="?action=eliminar&id=<?php echo $r->id; ?>">Eliminar</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
