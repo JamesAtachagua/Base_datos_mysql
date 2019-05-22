@@ -57,7 +57,7 @@ if(isset($_REQUEST['action']))
         <div class="pure-g">
             <div class="pure-u-1-12">
                 
-                <form action="?action=<?php echo $alm->id > 0 ? 'actualizar' : 'registrar'; ?>" method="post" class="pure-form pure-form-stacked" style="margin-bottom:30px;">
+                <form action="?action=<?php echo $alm->id > 0 ? 'actualizar' : 'registrar'; ?>" method="post" enctype="multipart/form-data" class="pure-form pure-form-stacked" style="margin-bottom:30px;">
                     <input type="hidden" name="id" value="<?php echo $alm->__GET('id'); ?>" />
                     
                     <table style="width:500px;">
