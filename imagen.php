@@ -8,7 +8,7 @@
     <body >
     	<form action="subir.php"  method="POST" enctype="multipart/form-data"> 
             <tr>
-		     	<td style="text-align:left;">Imagen</td>
+		     		<td style="text-align:left;">Imagen</td>
 		        <td><input type="file" name="image" style="width:100%;" /></td>
 		    </tr>
 
