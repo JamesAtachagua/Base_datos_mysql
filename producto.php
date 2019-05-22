@@ -21,7 +21,7 @@ if(isset($_REQUEST['action']))
 			$tipo = $_FILES['imagen']['type'];
 			$tamaño_imagen = _FILES['imagen']['size'];
 
-			$carpeta_destino = _SERVER['DOCUMENT_ROOT'] . '/html/imagenes_bd';
+			$carpeta_destino = _SERVER['DOCUMENT_ROOT'] . '/html/imagenes_bd/';
 
 			move_uploaded_file(_FILES['imagen']['temp_name'], $carpeta_destino.$nombre_imagen);
 
@@ -41,7 +41,7 @@ if(isset($_REQUEST['action']))
 			$tipo = $_FILES['imagen']['type'];
 			$tamaño_imagen = _FILES['imagen']['size'];
 
-			$carpeta_destino = _SERVER['DOCUMENT_ROOT'] . '/html/imagenes_bd';
+			$carpeta_destino = _SERVER['DOCUMENT_ROOT'] . '/html/imagenes_bd/';
 
 			move_uploaded_file(_FILES['imagen']['temp_name'], $carpeta_destino.$nombre_imagen);
 
@@ -106,7 +106,7 @@ if(isset($_REQUEST['action']))
 							$tipo = $_FILES['imagen']['type'];
 							$tamaño_imagen = _FILES['imagen']['size'];
 
-							$carpeta_destino = _SERVER['DOCUMENT_ROOT'] . '/html/imagenes_bd';
+							$carpeta_destino = _SERVER['DOCUMENT_ROOT'] . '/html/imagenes_bd/';
 
 							move_uploaded_file(_FILES['imagen']['temp_name'], $carpeta_destino.$nombre_imagen);
 
