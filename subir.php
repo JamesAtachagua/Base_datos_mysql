@@ -1,16 +1,25 @@
 <?php
 
-	$nombre_imagen = $_FILES['imagen']['name'];
-	$tipo = $_FILES['imagen']['type'];
-	$tamano_imagen = $_FILES['imagen']['size'];
-	$temp = $_FILES['imagen']['tmp_name'];
-
-	echo $_FILES['imagen']['name'];
+	$nombre_imagen = $_FILES['foto']['name'];
+	//echo $_FILES['foto']['name'];
 
 
-	$carpeta_destino = '/var/www/img/';
+	$tipo = $_FILES['foto']['type'];
+	//echo $tipo;
+
+	$tamano_imagen = $_FILES['foto']['size'];
+	//echo $tamano_imagen;
+
+	$temp = $_FILES['foto']['tmp_name'];
+
+	//echo $temp;
+
+
+	$carpeta_destino = $_SERVER['DOCUMENT_ROOT'].'/crud1/imagen/';
+
+	//echo $carpeta_destino;
 
 	move_uploaded_file($temp, $carpeta_destino.$nombre_imagen);
 
-		//echo "hecho";
+	//echo "hecho";
 ?>

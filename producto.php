@@ -5,54 +5,60 @@ require_once 'producto.model.php';
 // Logica
 $alm = new Producto();
 $model = new ProductoModel();
-$imagen;
+$nombre = '';
 
 if(isset($_REQUEST['action']))
 {
 
-	switch($_REQUEST['action'])
-	{
-		case 'actualizar':
-			$alm->__SET('id',              $_REQUEST['id']);
-			$alm->__SET('descripcion',     $_REQUEST['descripcion']);
-			$alm->__SET('precio',        $_REQUEST['precio']);
-			$alm->__SET('stock',          $_REQUEST['stock']);
-			$alm->__SET('imagen',        $_REQUEST['imagen']);
+    switch($_REQUEST['action'])
+    {
+        case 'actualizar':
+            $alm->__SET('id',              $_REQUEST['id']);
+            $alm->__SET('descripcion',     $_REQUEST['descripcion']);
+            $alm->__SET('precio',        $_REQUEST['precio']);
+            $alm->__SET('stock',          $_REQUEST['stock']);
 
-			$model->Actualizar($alm);
-			header('Location: producto.php');
-			break;
+            include('subir.php');
 
-		case 'registrar':
-			$alm->__SET('id',              $_REQUEST['id']);
-			$alm->__SET('descripcion',     $_REQUEST['descripcion']);
-			$alm->__SET('precio',        $_REQUEST['precio']);
-			$alm->__SET('stock',          $_REQUEST['stock']);
-			$alm->__SET('imagen',        $_REQUEST['imagen']);
+            $alm->__SET('imagen',        $nombre_imagen);
 
-			$model->Registrar($alm);
-			header('Location: producto.php');
-			break;
+            $model->Actualizar($alm);
+            header('Location: producto.php');
+            break;
 
-		case 'eliminar':
-			$model->Eliminar($_REQUEST['id']);
-			header('Location: producto.php');
-			break;
+        case 'registrar':
+            $alm->__SET('id',              $_REQUEST['id']);
+            $alm->__SET('descripcion',     $_REQUEST['descripcion']);
+            $alm->__SET('precio',        $_REQUEST['precio']);
+            $alm->__SET('stock',          $_REQUEST['stock']);
 
-		case 'editar':
-			$alm = $model->Obtener($_REQUEST['id']);
-			break;
-	}
+            include('subir.php');
+
+            $alm->__SET('imagen',        $nombre_imagen);
+
+            $model->Registrar($alm);
+            header('Location: producto.php');
+            break;
+
+        case 'eliminar':
+            $model->Eliminar($_REQUEST['id']);
+            header('Location: producto.php');
+            break;
+
+        case 'editar':
+            $alm = $model->Obtener($_REQUEST['id']);
+            break;
+    }
 }
 
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<title>Mantenimiento</title>
+    <head>
+        <title>Mantenimiento</title>
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
-	</head>
+    </head>
     <body style="padding:15px;">
 
         <div class="pure-g">
@@ -62,7 +68,7 @@ if(isset($_REQUEST['action']))
                     <input type="hidden" name="id" value="<?php echo $alm->__GET('id'); ?>" />
                     
                     <table style="width:500px;">
-                    	<tr>
+                        <tr>
                             <th style="text-align:left;">ID</th>
                             <td><input type="text" name="id" value="<?php echo $alm->__GET('id'); ?>" style="width:100%;" /></td>
                         </tr>
@@ -80,10 +86,10 @@ if(isset($_REQUEST['action']))
                         </tr>
 
                        
-	                        <tr>
-						     	<td style="text-align:left;">Imagen</td>
-						        <td><input type="file" name="image" accept="image/*" style="width:100%;" /></td>
-						    </tr>
+                            <tr>
+                                <td style="text-align:left;">Imagen</td>
+                                <td><input type="file" name="foto" value="" style="width:100%;" /></td>
+                            </tr>
 
 
                         <tr>
@@ -112,7 +118,8 @@ if(isset($_REQUEST['action']))
                             <td><?php echo $r->__GET('descripcion'); ?></td>
                             <td><?php echo $r->__GET('precio'); ?></td>
                             <td><?php echo $r->__GET('stock'); ?></td>
-                            <td><?php echo $r->__GET('imagen'); ?></td>
+
+                            <td><img src="/crud1/imagen/<?php echo $r->__GET('imagen'); ?>" alt="Girl in a jacket" width="100" height="100">       </td>
 
 
                             <td>
