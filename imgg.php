@@ -1,5 +1,5 @@
 <?php  
- $connect = mysqli_connect('localhost:3306; dbname=acad', 'utec', 'utec');  
+ $connect = mysqli_connect('mysql:host=localhost:3306; dbname=acad', 'utec', 'utec');  
 
  if(isset($_POST["insert"]))  
  {  
