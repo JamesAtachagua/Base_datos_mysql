@@ -5,6 +5,7 @@
 	<title>HOLA</title>
 		
 	</head>
+	
     <body >
     	<form action="subir.php"  method="POST" enctype="multipart/form-data"> 
             <tr>
